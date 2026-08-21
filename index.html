@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>ถึงบิบิ๋ 💗</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;background:linear-gradient(135deg,#fff5f8,#ffe3ee);color:#5d3542;min-height:100vh}
+.wrap{max-width:520px;margin:auto;padding:28px 18px 50px}.card{background:#fff9fb;border:2px solid #ffd1df;border-radius:30px;padding:24px;box-shadow:0 15px 45px #d96b8b25;text-align:center}
+h1{font-size:34px;margin:8px 0;color:#ef5d86}.sub{font-size:17px;margin-bottom:18px}
+.bears{font-size:78px;line-height:1;margin:12px 0 20px;filter:drop-shadow(0 8px 8px #d96b8b22)}
+.message{background:#fff;border-radius:22px;padding:18px;line-height:1.9;border:1px solid #ffd8e4;font-size:17px}
+.music{margin:18px 0;background:#fff0f5;border-radius:20px;padding:14px}.music button,.forgive{border:0;border-radius:999px;padding:13px 22px;font-size:16px;font-weight:700;cursor:pointer}
+.music button{background:#ff8cad;color:white}.forgive{width:100%;background:#ef5d86;color:white;font-size:19px;box-shadow:0 8px 18px #ef5d8640}
+.note{font-size:13px;color:#9c7180;margin-top:13px}.heart{position:fixed;animation:float 5s linear forwards;pointer-events:none}
+@keyframes float{from{transform:translateY(20px);opacity:0}15%{opacity:1}to{transform:translateY(-110vh) rotate(20deg);opacity:0}}
+.hidden{display:none}.success{font-size:24px;color:#ef5d86;font-weight:800;margin-top:15px}
+</style>
+</head>
+<body>
+<div class="wrap"><div class="card">
+<div class="sub">🔐 ข้อความลับสำหรับบิบิ๋</div>
+<h1>เค้าขอโทษนะบิบิ๋ 💗</h1>
+<div class="bears">🧸💕🧸</div>
+<div class="message">
+เค้ารู้ว่าเค้าผิดไปแล้วจริง ๆ 🥺<br>
+เค้าไม่อยากให้บิบิ๋นอยเลยนะ<br>
+เค้ารักบิบิ๋ที่สุดเลย 💕<br>
+กลับมาดีกันนะค้าบบบ 🥺💗
+</div>
+<div class="music">
+<div style="font-weight:700;margin-bottom:9px">🎵 เพลงง้อจากเค้า</div>
+<audio id="song" controls preload="auto" style="width:100%"><source src="apology-melody.wav" type="audio/wav"></audio>
+<div style="font-size:12px;margin-top:7px;color:#a67b88">กด ▶️ แล้วฟังเพลงที่เค้าทำมาให้นะ</div>
+</div>
+<button class="forgive" onclick="forgive()">หายงอนแล้ว 💕</button>
+<div id="success" class="hidden success">เย้! 🥹💗 ขอบคุณที่กลับมาดีกันนะ</div>
+<div class="note">ปล. ตั้งใจทำให้บิบิ๋คนเดียวเลยนะ 🫶🏻</div>
+</div></div>
+<script>
+function forgive(){
+ document.getElementById('success').classList.remove('hidden');
+ for(let i=0;i<18;i++){
+   const h=document.createElement('div');h.className='heart';h.textContent=['💗','💕','💖','🥰'][i%4];
+   h.style.left=(5+Math.random()*90)+'vw';h.style.bottom='0';h.style.fontSize=(18+Math.random()*20)+'px';
+   h.style.animationDelay=(Math.random()*0.8)+'s';document.body.appendChild(h);
+   setTimeout(()=>h.remove(),5500);
+ }
+}
+</script>
+</body></html>
